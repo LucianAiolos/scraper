@@ -14,15 +14,14 @@ axios(url)
     const $ = cheerio.load(html)
     const articles = []
 
-    console.log($)
+    // console.log(html)
 
-    $('.product-title', html).each(()=> {
+    $('.product-title', html).each(function() {   /// need to use function key word not ES6 syntax
       const title = $(this).text()
       const url = $(this).find('a').attr('href')
-      // console.log()
       articles.push({
         title: title,
-        url: url,
+        url
       })
     })
     console.log(articles)
